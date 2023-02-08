@@ -1,0 +1,13 @@
+<div class="container-fluid text-center pb-4" id="bg">
+  <h3 class="text-white">Simple ToDo List</h3>
+  <div class="container-fluid">
+  <input [(ngModel)]="newTask" type="text" class="mb-2 mt-4" value="" placeholder="Enter"><br>
+  <button (click)="addToList()" class="btn btn-primary p-1">Add Task</button>
+</div>
+
+<div *ngFor="let x of items; let index=index;" class="d-flex justify-content-center p-2">
+  <p class="text-white p-2">{{ x }}</p>
+  <input (click)="deleteTask(index)" type="button" class="btn btn-danger p-1" value="Delete">
+</div>
+
+<router-outlet></router-outlet>
